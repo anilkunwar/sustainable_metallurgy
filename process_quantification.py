@@ -66,7 +66,7 @@ for process_name, details in data.items():
             process_id = details.get("Process", None)  # Get the process identifier (e.g., "(a)")
             image_file = process_images.get(process_id, None)
             if image_file:
-                st.image(image_file, caption=f"Process {process_id}", use_column_width=True)
+                st.image(image_file, caption=f"Process {process_id}", use_container_width=True)
 
         # Display the Temperature-Time (T-t) curve in the second column
         with col2:
