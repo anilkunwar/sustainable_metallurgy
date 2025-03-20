@@ -14,6 +14,14 @@ data = load_yaml("green_metallurgy.yaml")
 
 st.title("GreenProcessesApp")
 st.title("Process Energy and Conditions")
+# Add logo at the top right
+logo_html = """
+    <div style="position: absolute; top: 10px; right: 10px;">
+        <img src="https://your-logo-url.com/logo-green-processes.jpg" alt="Logo" style="width: 100px; height: auto;">
+    </div>
+"""
+st.markdown(logo_html, unsafe_allow_html=True)
+
 
 total_energy = 0
 processes = []
