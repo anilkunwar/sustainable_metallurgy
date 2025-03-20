@@ -15,9 +15,11 @@ data = load_yaml("green_metallurgy.yaml")
 st.title("GreenProcessesApp")
 st.title("Process Energy and Conditions")
 # Add logo at the top right
-logo_html = """
+# Add logo at the top right (using a local image)
+logo_path = "logo-green-processes.jpg"  # Replace this with your logo filename
+logo_html = f"""
     <div style="position: absolute; top: 10px; right: 10px;">
-        <img src="logo-green-processes.jpg" alt="Logo" style="width: 100px; height: auto;">
+        <img src="{logo_path}" alt="Logo" style="width: 100px; height: auto;">
     </div>
 """
 st.markdown(logo_html, unsafe_allow_html=True)
