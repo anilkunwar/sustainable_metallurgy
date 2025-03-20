@@ -23,7 +23,7 @@ def get_base64_image(image_path):
 image_base64 = get_base64_image("logo-green-processes.jpg")
 
 logo_html = f"""
-    <div style="position: absolute; top: 20px; left: 10px;">
+    <div style="position: absolute; bottom: 10px; left: 10px;">
         <img src="data:image/jpeg;base64,{image_base64}" alt="Logo" style="width: 100px; height: auto;">
     </div>
 """
