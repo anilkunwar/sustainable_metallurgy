@@ -114,7 +114,7 @@ for process_name, details in data.items():
                         xaxis_title_font_size=label_font_size,
                         yaxis_title_font_size=label_font_size,
                     )
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_column_width=True)
 
         # Display metrics and energy per step details below the image and T-t curve
         col3, col4 = st.columns(2)
