@@ -12,6 +12,7 @@ def load_yaml(file_path):
 # Load data from the YAML file
 data = load_yaml("green_metallurgy.yaml")
 
+st.title("GreenProcessesApp")
 st.title("Process Energy and Conditions")
 
 total_energy = 0
