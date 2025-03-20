@@ -127,7 +127,8 @@ for process_name, details in data.items():
 
         with col4:
             # st.write("Energy E consumed per step (Time in hours and E in kWh):")
-            st.write("Energy consumed per Step (t in h and Energy in kWh):")
+            # st.write("Energy consumed per Step (t in h and Energy in kWh):")
+            st.write("Energy consumed per step (t [hours],Energy [kWh]:")
             for step, interval in time_steps.items():
                 energy_per_step = power * interval  # Calculate energy for each step
                 st.write(f"{step}: {interval} hours, {energy_per_step:.2f} kWh")
