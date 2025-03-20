@@ -60,7 +60,8 @@ for process_name, details in data.items():
         
         # Create two columns for the image and the T-t curve
         #col1, col2 = st.columns([1, 2])  # Adjust column widths (1:2 ratio)
-        col1, col2 = st.columns([1, 1])  # Adjust column widths (1:1 ratio)
+        #col1, col2 = st.columns([1, 1])  # Adjust column widths (1:1 ratio)
+        col1, col2 = st.columns([2, 3])  # Adjust column widths (2:3 ratio)
 
         # Display the process image in the first column
         with col1:
