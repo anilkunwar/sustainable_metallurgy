@@ -1,0 +1,138 @@
+Mechanical_Mixing:
+  Process: "(a)"
+  Make: "Zamak-Mercator"
+  Device_Type: "VM-30"
+  Working_Temperature:
+    Max: 303.15  # Kelvin
+    Min: 293.15  # Kelvin
+  Time:
+    interval1: 0.0  # hours to make two points for graphical visualization
+    interval2: 1.0  # hours 
+  Temperature_Profile:  #    Kelvin
+    interval1:
+      Type: "isothermal"
+      T: 298.15
+    interval2:
+      Type: "isothermal"
+      T: 298.15
+  Voltage: 230 " #V
+  Current: 13.4 # Amperes
+  Power_Average: 7.4 #kW
+  
+
+Filament_Extrusion:
+  Process: "(b)"
+  Make: "Zamak-Mercator"
+  Device_Type: "ZMK/193/12"
+  Working_Temperature:
+    Max: 303.15  # Kelvin
+    Min: 293.15  # Kelvin
+  Time:
+    interval1: 0.0  # hours 
+    interval2: 0.5  # hours 
+  Temperature_Profile:  #    Kelvin
+    interval1:
+      Type: "isothermal"
+      T: 298.15
+    interval2:
+      Type: "isothermal"
+      T: 298.15
+  Voltage: 230 " # V
+  Current: 13.0 # Amperes
+  Power_Average: 2.9 #kW
+
+3D_Printing:
+  Process: "(c)"
+  Make: "BCN 3D Sigma D25"
+  Device_Type: ""
+  Working_Temperature:   #Not the ambient temperature (288.15 - 303.15 K)
+    Max: 573
+    Min: 353
+  Time:
+    interval1: 0.0  # hours 
+    interval2: 0.25  # hours 
+  Temperature_Profile:  #    Kelvin
+    interval1:
+      Type: "isothermal"
+      T: 573.15
+    interval2:
+      Type: "isothermal"
+      T: 573.15
+  Voltage: 240 #V
+  Current: 3.0 #Amperes
+  Power_Average: 0.65 # KW
+  
+
+Debinding:
+  Process: "(d)"
+  Make: "Firma Czylok, Jastrzebie Zdroj"
+  Device_Type: "PRW 55M"
+  Working_Temperature:
+    Max: 1273.15  # Kelvin
+    Min: 293.15  # Kelvin
+  Time:
+    interval1: 7.0 # h
+    interval2: 1.0
+    interval3: 15 # hours - 35 hours isothermal holding at 723 K
+    interval4: 2  # hour - cooling to room temperature
+    interval5: 10
+    interval6: 1
+    interval7: 4 
+  Temperature_Profile:
+    interval1:
+      Type: "ramp"
+      Tstart: 273.15
+      Tend: 553.15 #Kelvin
+    interval2:
+      Type: "isothermal"
+      T: 553.15
+    interval3:
+      Type: "ramp"
+      Tstart: 553.15
+      Tend: 693.15 #Kelvin
+    interval4:
+      Type: "isothermal"
+      T: 693.15
+    interval5:
+      Type: "ramp"
+      Tstart: 693.15
+      Tend: 723.15 #Kelvin
+    interval6:
+      Type: "isothermal"
+      T: 723.15
+    interval7: 
+      Type: "ramp"
+      Tstart: 723.15
+      Tend: 313.15 #Kelvin
+  Voltage: "230 V"
+  Current: 7.82  # Amperes
+  Power_Average: 1.8 # kW
+
+
+Sintering:
+  Process: "(e)"
+  Make: "Firma Czylok, Jastrzebie Zdroj"
+  Device_Type: "PRC 55M0x220/160M"
+  Working_Temperature:
+    Max: 1873.15  # Kelvin
+    Min: 293.15  # Kelvin
+  Time:
+    interval1: 4.6  # hours 273-1653 K ramp positive
+    interval2: 0.5  # hours - isothermal
+    interval3: 4.6 # hours - isothermal
+  Temperature_Profile:
+    interval1:
+      Type: "ramp"
+      Tstart: 273.15
+      Tend: 1653.15 #Kelvin
+    interval2:
+      Type: "isothermal"
+      T: 1653.15
+    interval3:
+      Type: "ramp"
+      Tstart: 1653.15
+      Tend: 313.15 #Kelvin
+  Voltage: 230 #V
+  Current: 17  # Amperes
+  Power_Average: 3.82 # kW
+
