@@ -134,4 +134,4 @@ for process_name, details in data.items():
                 st.write(f"{step}: {interval} hours, {energy_per_step:.2f} kWh")
 
 # Sidebar metrics
-st.sidebar.metric(label="Grand Total Energy Used", value=f"{total_energy:.2f} kWh")
+st.sidebar.metric(label="Grand Total Energy Used by Processes (a)-(e)", value=f"{total_energy:.2f} kWh")
