@@ -42,8 +42,8 @@ process_images = {
 # Sidebar options for plot customization
 st.sidebar.title("Plot Customization")
 plot_library = st.sidebar.radio("Select Plotting Library", ["Matplotlib", "Plotly"], index=0)
-line_thickness = st.sidebar.slider("Line Thickness", min_value=1, max_value=10, value=2)
-label_font_size = st.sidebar.slider("Label Font Size", min_value=8, max_value=20, value=12)
+line_thickness = st.sidebar.slider("Line Thickness", min_value=1, max_value=10, value=4)
+label_font_size = st.sidebar.slider("Label Font Size", min_value=8, max_value=20, value=16)
 curve_color = st.sidebar.color_picker("Select Curve Color", "#1f77b4")  # Default color
 
 for process_name, details in data.items():
@@ -96,8 +96,10 @@ for process_name, details in data.items():
                     fig, ax = plt.subplots(figsize=(6, 4))
                     ax.plot(df["Time (hours)"], df["Temperature (K)"], linewidth=line_thickness, color=curve_color, label="T-t Curve")
                     ax.set_title(f"Temperature Profile for {process_name}", fontsize=label_font_size)
-                    ax.set_xlabel("Time (hours)", fontsize=label_font_size)
-                    ax.set_ylabel("Temperature (K)", fontsize=label_font_size)
+                    #ax.set_xlabel("Time (hours)", fontsize=label_font_size)
+                    ax.set_xlabel("t (h)", fontsize=label_font_size)
+                    #ax.set_ylabel("Temperature (K)", fontsize=label_font_size)
+                    ax.set_ylabel("T (K)", fontsize=label_font_size)
                     ax.legend(fontsize=label_font_size)
                     ax.grid(True)
                     st.pyplot(fig)
@@ -105,8 +107,10 @@ for process_name, details in data.items():
                     # Plot using Plotly
                     fig = px.line(
                         df,
-                        x="Time (hours)",
-                        y="Temperature (K)",
+                        #x="Time (hours)",
+                        x="t (h)",
+                        #y="Temperature (K)",
+                        y="T (K)",
                         title=f"Temperature Profile for {process_name}",
                         line_shape="linear",
                     )
