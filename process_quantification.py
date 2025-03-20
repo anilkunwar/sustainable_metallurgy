@@ -3,6 +3,7 @@ import yaml
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+import base64
 
 # Load YAML file
 def load_yaml(file_path):
@@ -14,12 +15,16 @@ data = load_yaml("green_metallurgy.yaml")
 
 st.title("GreenProcessesApp")
 st.title("Process Energy and Conditions")
-# Add logo at the top right
-# Add logo at the top right (using a local image)
-logo_path = "logo-green-processes.jpg"  # Replace this with your logo filename
+##Logo
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+image_base64 = get_base64_image("logo-green-processes.jpg")
+
 logo_html = f"""
     <div style="position: absolute; top: 10px; right: 10px;">
-        <img src="{logo_path}" alt="Logo" style="width: 100px; height: auto;">
+        <img src="data:image/jpeg;base64,{image_base64}" alt="Logo" style="width: 100px; height: auto;">
     </div>
 """
 st.markdown(logo_html, unsafe_allow_html=True)
