@@ -140,3 +140,13 @@ for process_name, details in data.items():
 
 # Sidebar metrics
 st.sidebar.metric(label="Grand Total Energy Used by Processes (a)-(e)", value=f"{total_energy:.2f} kWh")
+# User input for mass of the sample
+st.sidebar.title("Mass Input")
+mass = st.sidebar.number_input("Enter the mass of the sample (kg):", min_value=0.1, value=1.0, step=0.1)
+
+# Calculate specific energy
+if mass > 0:
+    specific_energy = total_energy / mass  # kWh/kg
+    st.sidebar.metric(label="Specific Grand Total Energy", value=f"{specific_energy:.2f} kWh/kg")
+else:
+    st.sidebar.warning("Please enter a valid mass greater than 0.")
