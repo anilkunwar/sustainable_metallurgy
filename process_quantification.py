@@ -30,6 +30,9 @@ st.markdown(sidebar_background, unsafe_allow_html=True)
 # Navigation
 st.sidebar.title("Navigation Page")
 selected_process = st.sidebar.selectbox("Select a Process", list(data.keys()))
+# User input for mass of the sample
+st.sidebar.title("Mass Input")
+mass = st.sidebar.number_input("Enter the mass of the sample (kg):", min_value=0.1, value=1.0, step=0.1)
 
 # Map process identifiers (e.g., "(a)", "(b)") to image filenames
 process_images = {
@@ -141,8 +144,8 @@ for process_name, details in data.items():
 # Sidebar metrics
 st.sidebar.metric(label="Grand Total Energy Used by Processes (a)-(e)", value=f"{total_energy:.2f} kWh")
 # User input for mass of the sample
-st.sidebar.title("Mass Input")
-mass = st.sidebar.number_input("Enter the mass of the sample (kg):", min_value=0.1, value=1.0, step=0.1)
+#st.sidebar.title("Mass Input")
+#mass = st.sidebar.number_input("Enter the mass of the sample (kg):", min_value=0.1, value=1.0, step=0.1)
 
 # Calculate specific energy
 if mass > 0:
